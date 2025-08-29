@@ -23,16 +23,6 @@ export default async function HomePage({
         title={t("about.title")}
         bio={t("about.bio")}
         skillsLabel={t("about.skills")}
-        skills={[
-          "React",
-          "TypeScript",
-          "Next.js",
-          "Tailwind CSS",
-          "shadcn/ui",
-          "React Query",
-          "TanStack Table",
-          "Shopify",
-        ]}
         highlights={t.raw("about.highlights") as string[]}
       />
       <hr />

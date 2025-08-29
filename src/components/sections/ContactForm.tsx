@@ -5,17 +5,13 @@ import { submitContact } from "@/features/contact/actions";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { WHATSAPP_PHONE } from "@/lib/constants";
 import { buildWhatsAppLink } from "@/lib/utils";
-import {
-  CONTACT_FORM_CONSTANTS,
-  type LocaleType,
-} from "./constants/contactForm.constants";
+import { CONTACT_FORM_CONSTANTS } from "./constants/contactForm.constants";
 
 export default function ContactForm() {
   const t = useTranslations();
-  const locale = useLocale() as LocaleType;
   const form = useContactForm();
   const [loading, setLoading] = useState(false);
 
@@ -30,13 +26,12 @@ export default function ContactForm() {
       fd.set(CONTACT_FORM_CONSTANTS.FIELD_NAMES.NAME, values.name);
       fd.set(CONTACT_FORM_CONSTANTS.FIELD_NAMES.EMAIL, values.email);
       fd.set(CONTACT_FORM_CONSTANTS.FIELD_NAMES.MESSAGE, values.message);
-      const res = await submitContact(null, fd);
+      const res = await submitContact(fd);
       if (res?.ok) {
         toast.success(t("contact.success"));
         const link = buildWhatsAppLink({
           phone: WHATSAPP_PHONE,
           name: values.name,
-          locale,
           context: CONTACT_FORM_CONSTANTS.WHATSAPP_CONFIG.CONTEXT,
           messages: {
             "whatsapp.prefill": t("whatsapp.prefill"),
