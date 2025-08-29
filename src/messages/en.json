@@ -1,0 +1,53 @@
+{
+	"meta": {
+		"title": "Abdelrahman | Software Engineer",
+		"description": "Portfolio of Abdelrahman: projects, skills, and contact."
+	},
+	"nav": {
+		"hero": "Home",
+		"projects": "Projects",
+		"about": "About",
+		"contact": "Contact"
+	},
+	"hero": {
+		"title": "Hi, I'm Abdelrahman",
+		"subtitle": "I build fast, accessible web apps.",
+		"cta": {
+			"projects": "View Projects",
+			"contact": "Contact",
+			"whatsapp": "Continue on WhatsApp"
+		}
+	},
+	"about": {
+		"title": "About",
+		"tagline": "Front‑end engineer crafting fast, polished web apps.",
+		"bio": "I’m a front‑end developer focused on building production‑ready interfaces with React, TypeScript, and Tailwind. I’ve delivered dashboards, design systems, and e‑commerce experiences for teams at Ejada and freelance clients, emphasizing accessibility, performance, and clean architecture.",
+		"highlights": [
+			"Built notification, loyalty, and admin dashboards with RTL, theming, and i18n.",
+			"Designed and documented a reusable component system (shadcn/ui + Storybook).",
+			"Shipped Shopify storefronts and custom UI improvements, integrating APIs and payments.",
+			"Ship with modern tooling: React Query, TanStack Table, CI/CD, and clear communication."
+		],
+		"skills": "Skills"
+	},
+	"projects": {
+		"title": "Projects",
+		"filter": {
+			"all": "All",
+			"language": "Language"
+		},
+		"stars": "stars"
+	},
+	"contact": {
+		"title": "Contact",
+		"name": "Name",
+		"email": "Email",
+		"message": "Message",
+		"submit": "Send Message",
+		"success": "Thanks! I'll get back to you soon."
+	},
+	"whatsapp": {
+		"prefill": "Hello! I'm {name}. I'd like to discuss a project.",
+		"prefill_anon": "Hello! I'd like to discuss a project."
+	}
+} 
