@@ -4,7 +4,7 @@ import { getMessages } from "@/features/i18n/getMessages";
 import { DEFAULT_LOCALE, type AppLocale } from "@/features/i18n/locales";
 import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/components/ui/Navbar";
-import "./scroll.css";
+import "./scroll.css"; // For scroll-margin-top
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: AppLocale }>;
@@ -28,6 +28,7 @@ export default async function LocaleLayout({
   const locale = raw || DEFAULT_LOCALE;
   const dir = locale === "ar" ? "rtl" : "ltr";
   const messages = await getMessages(locale);
+
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
       <div dir={dir} data-locale={locale}>

@@ -45,110 +45,161 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Vanta.js inspired color palette */
+  --vanta-pink: #ff3f81;
+  --vanta-pink-light: #ff6b9a;
+  --vanta-pink-dark: #e62e6b;
+  --vanta-purple: #23153c;
+  --vanta-purple-light: #2d1b4d;
+  --vanta-purple-dark: #1a0f2e;
+  --vanta-purple-lighter: #3a2361;
+  --vanta-purple-darker: #120a1f;
+  
+  /* Light Theme */
+  --background: var(--vanta-purple);
+  --foreground: #ffffff;
+  --card: var(--vanta-purple-light);
+  --card-foreground: #ffffff;
+  --popover: var(--vanta-purple-light);
+  --popover-foreground: #ffffff;
+  --primary: var(--vanta-pink);
+  --primary-foreground: #ffffff;
+  --secondary: var(--vanta-purple-lighter);
+  --secondary-foreground: #ffffff;
+  --muted: var(--vanta-purple-lighter);
+  --muted-foreground: #94a3b8;
+  --accent: var(--vanta-pink-light);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: var(--vanta-purple-lighter);
+  --input: var(--vanta-purple-lighter);
+  --ring: var(--vanta-pink);
+  --chart-1: var(--vanta-pink);
+  --chart-2: var(--vanta-pink-light);
+  --chart-3: var(--vanta-purple-lighter);
+  --chart-4: var(--vanta-purple-light);
+  --chart-5: #e2e8f0;
+  --sidebar: var(--vanta-purple-light);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: var(--vanta-pink);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--vanta-purple-lighter);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: var(--vanta-purple-lighter);
+  --sidebar-ring: var(--vanta-pink);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Dark Theme */
+  --background: var(--vanta-purple-darker);
+  --foreground: #ffffff;
+  --card: var(--vanta-purple-dark);
+  --card-foreground: #ffffff;
+  --popover: var(--vanta-purple-dark);
+  --popover-foreground: #ffffff;
+  --primary: var(--vanta-pink);
+  --primary-foreground: var(--vanta-purple-darker);
+  --secondary: var(--vanta-purple-lighter);
+  --secondary-foreground: #ffffff;
+  --muted: var(--vanta-purple-lighter);
+  --muted-foreground: #94a3b8;
+  --accent: var(--vanta-purple-lighter);
+  --accent-foreground: #ffffff;
+  --destructive: #fc8181;
+  --border: var(--vanta-purple-lighter);
+  --input: var(--vanta-purple-lighter);
+  --ring: var(--vanta-pink);
+  --chart-1: var(--vanta-pink);
+  --chart-2: var(--vanta-pink-light);
+  --chart-3: var(--vanta-purple-lighter);
+  --chart-4: var(--vanta-purple-light);
+  --chart-5: #4a5568;
+  --sidebar: var(--vanta-purple-dark);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: var(--vanta-pink);
+  --sidebar-primary-foreground: var(--vanta-purple-darker);
+  --sidebar-accent: var(--vanta-purple-lighter);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: var(--vanta-purple-lighter);
+  --sidebar-ring: var(--vanta-pink);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
+  
   body {
     @apply bg-background text-foreground;
   }
-  /* Custom loader animations as Tailwind utilities */
+  
+  /* Custom text selection colors */
+  ::selection {
+    background-color: var(--vanta-pink);
+    color: #ffffff;
+  }
+  
+  ::-moz-selection {
+    background-color: var(--vanta-pink);
+    color: #ffffff;
+  }
+  
+  /* Custom scrollbar with Vanta.js colors */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: var(--vanta-purple-light);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--vanta-pink);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--vanta-pink-dark);
+  }
+  
+  /* Custom focus styles */
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--vanta-pink), 0 0 0 4px var(--vanta-purple);
+  }
+}
+
+/* Custom loader animations as Tailwind utilities */
 @layer utilities {
   @keyframes loader-rotate {
-    0%   { transform: rotate(0deg)   scale(0.8); }
+    0%   { transform: rotate(0deg) scale(0.8); }
     50%  { transform: rotate(360deg) scale(1.2); }
     100% { transform: rotate(720deg) scale(0.8); }
   }
 
   @keyframes loader-ball1 {
-    0%   { box-shadow: 30px 0 0 #f8b334; }
+    0%   { box-shadow: 30px 0 0 var(--vanta-pink); }
     50%  {
-      box-shadow: 0 0 0 #f8b334;
+      box-shadow: 0 0 0 var(--vanta-pink);
       margin-bottom: 0;
       transform: translate(15px, 15px);
     }
     100% {
-      box-shadow: 30px 0 0 #f8b334;
+      box-shadow: 30px 0 0 var(--vanta-pink);
       margin-bottom: 10px;
     }
   }
 
   @keyframes loader-ball2 {
-    0%   { box-shadow: 30px 0 0 #97bf0d; }
+    0%   { box-shadow: 30px 0 0 var(--vanta-purple-lighter); }
     50%  {
-      box-shadow: 0 0 0 #97bf0d;
+      box-shadow: 0 0 0 var(--vanta-purple-lighter);
       margin-top: -20px;
       transform: translate(15px, 15px);
     }
     100% {
-      box-shadow: 30px 0 0 #97bf0d;
+      box-shadow: 30px 0 0 var(--vanta-purple-lighter);
       margin-top: 0;
     }
   }
@@ -156,6 +207,104 @@
   .animate-loader-rotate { animation: loader-rotate 1s linear infinite; }
   .animate-loader-ball1  { animation: loader-ball1  1s linear infinite; }
   .animate-loader-ball2  { animation: loader-ball2  1s linear infinite; }
-}
+  
+  /* Custom color utilities */
+  .bg-vanta-pink { background-color: var(--vanta-pink); }
+  .bg-vanta-pink-light { background-color: var(--vanta-pink-light); }
+  .bg-vanta-pink-dark { background-color: var(--vanta-pink-dark); }
+  .bg-vanta-purple { background-color: var(--vanta-purple); }
+  .bg-vanta-purple-light { background-color: var(--vanta-purple-light); }
+  .bg-vanta-purple-dark { background-color: var(--vanta-purple-dark); }
+  .bg-vanta-purple-lighter { background-color: var(--vanta-purple-lighter); }
+  .bg-vanta-purple-darker { background-color: var(--vanta-purple-darker); }
+  
+  .text-vanta-pink { color: var(--vanta-pink); }
+  .text-vanta-pink-light { color: var(--vanta-pink-light); }
+  .text-vanta-pink-dark { color: var(--vanta-pink-dark); }
+  .text-vanta-purple { color: var(--vanta-purple); }
+  .text-vanta-purple-light { color: var(--vanta-purple-light); }
+  .text-vanta-purple-dark { color: var(--vanta-purple-dark); }
+  .text-vanta-purple-lighter { color: var(--vanta-purple-lighter); }
+  .text-vanta-purple-darker { color: var(--vanta-purple-darker); }
+  
+  .border-vanta-pink { border-color: var(--vanta-pink); }
+  .border-vanta-pink-light { border-color: var(--vanta-pink-light); }
+  .border-vanta-pink-dark { border-color: var(--vanta-pink-dark); }
+  .border-vanta-purple { border-color: var(--vanta-purple); }
+  .border-vanta-purple-light { border-color: var(--vanta-purple-light); }
+  .border-vanta-purple-dark { border-color: var(--vanta-purple-dark); }
+  .border-vanta-purple-lighter { border-color: var(--vanta-purple-lighter); }
+  .border-vanta-purple-darker { border-color: var(--vanta-purple-darker); }
+  
+  /* Hover states */
+  .hover\:bg-vanta-pink:hover { background-color: var(--vanta-pink); }
+  .hover\:bg-vanta-pink-light:hover { background-color: var(--vanta-pink-light); }
+  .hover\:bg-vanta-pink-dark:hover { background-color: var(--vanta-pink-dark); }
+  .hover\:bg-vanta-purple:hover { background-color: var(--vanta-purple); }
+  .hover\:bg-vanta-purple-light:hover { background-color: var(--vanta-purple-light); }
+  .hover\:bg-vanta-purple-dark:hover { background-color: var(--vanta-purple-dark); }
+  .hover\:bg-vanta-purple-lighter:hover { background-color: var(--vanta-purple-lighter); }
+  .hover\:bg-vanta-purple-darker:hover { background-color: var(--vanta-purple-darker); }
+  
+  .hover\:text-vanta-pink:hover { color: var(--vanta-pink); }
+  .hover\:text-vanta-pink-light:hover { color: var(--vanta-pink-light); }
+  .hover\:text-vanta-pink-dark:hover { color: var(--vanta-pink-dark); }
+  .hover\:text-vanta-purple:hover { color: var(--vanta-purple); }
+  .hover\:text-vanta-purple-light:hover { color: var(--vanta-purple-light); }
+  .hover\:text-vanta-purple-dark:hover { color: var(--vanta-purple-dark); }
+  .hover\:text-vanta-purple-lighter:hover { color: var(--vanta-purple-lighter); }
+  .hover\:text-vanta-purple-darker:hover { color: var(--vanta-purple-darker); }
+  
+  .hover\:border-vanta-pink:hover { border-color: var(--vanta-pink); }
+  .hover\:border-vanta-pink-light:hover { border-color: var(--vanta-pink-light); }
+  .hover\:border-vanta-pink-dark:hover { border-color: var(--vanta-pink-dark); }
+  .hover\:border-vanta-purple:hover { border-color: var(--vanta-purple); }
+  .hover\:border-vanta-purple-light:hover { border-color: var(--vanta-purple-light); }
+  .hover\:border-vanta-purple-dark:hover { border-color: var(--vanta-purple-dark); }
+  .hover\:border-vanta-purple-lighter:hover { border-color: var(--vanta-purple-lighter); }
+  .hover\:border-vanta-purple-darker:hover { border-color: var(--vanta-purple-darker); }
+  
+  /* Focus states */
+  .focus\:ring-vanta-pink:focus { --tw-ring-color: var(--vanta-pink); }
+  .focus\:ring-vanta-purple:focus { --tw-ring-color: var(--vanta-purple); }
+  .focus\:ring-vanta-purple-lighter:focus { --tw-ring-color: var(--vanta-purple-lighter); }
+  
+  /* Gradient utilities */
+  .bg-gradient-vanta-pink { background: linear-gradient(135deg, var(--vanta-pink), var(--vanta-pink-light)); }
+  .bg-gradient-vanta-purple { background: linear-gradient(135deg, var(--vanta-purple), var(--vanta-purple-light)); }
+  .bg-gradient-vanta-pink-purple { background: linear-gradient(135deg, var(--vanta-pink), var(--vanta-purple)); }
+  .bg-gradient-vanta-purple-pink { background: linear-gradient(135deg, var(--vanta-purple), var(--vanta-pink)); }
+  
+  /* Shadow utilities with custom colors */
+  .shadow-vanta-pink { box-shadow: 0 4px 14px 0 rgba(255, 63, 129, 0.3); }
+  .shadow-vanta-purple { box-shadow: 0 4px 14px 0 rgba(35, 21, 60, 0.3); }
+  .shadow-vanta-purple-lighter { box-shadow: 0 4px 14px 0 rgba(58, 35, 97, 0.3); }
+  
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(58, 35, 97, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(58, 35, 97, 0.2);
+  }
+  
+  .glass-pink {
+    background: rgba(255, 63, 129, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 63, 129, 0.2);
+  }
+  
+  .glass-purple {
+    background: rgba(35, 21, 60, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(35, 21, 60, 0.2);
+  }
 }
 

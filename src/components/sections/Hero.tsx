@@ -85,7 +85,7 @@ export default function Hero() {
           <Reveal>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
               <span className="text-foreground">Front End</span>{" "}
-              <span className="bg-gradient-to-r from-primary via-purple-500 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-vanta-pink via-vanta-pink-light to-vanta-purple-lighter bg-clip-text text-transparent">
                 Developer
               </span>
             </h1>
@@ -94,9 +94,9 @@ export default function Hero() {
           {/* Animated Typing Text */}
           <Reveal delay={0.1}>
             <div className="h-16 flex items-center">
-              <span className="text-2xl sm:text-3xl lg:text-4xl text-muted-foreground font-medium">
+              <span className="text-2xl sm:text-3xl lg:text-4xl text-foreground-secondary font-medium">
                 {displayText}
-                <span className="animate-pulse">|</span>
+                <span className="animate-pulse text-vanta-pink">|</span>
               </span>
             </div>
           </Reveal>
@@ -107,7 +107,7 @@ export default function Hero() {
               <a
                 href="/AbdelrahmanYounees_cv.pdf"
                 download
-                className="inline-flex items-center gap-3 ltr:mr-4 rtl:ml-4 rounded-xl bg-primary px-8 py-4 text-primary-foreground font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="inline-flex items-center gap-3 ltr:mr-4 rtl:ml-4 rounded-xl bg-gradient-to-r from-vanta-pink to-vanta-pink-light px-8 py-4 text-white font-semibold hover:from-vanta-pink-light hover:to-vanta-pink transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border-2 border-transparent hover:border-vanta-purple-lighter/50"
               >
                 <Download className="w-6 h-6" />
                 Download CV
@@ -122,33 +122,33 @@ export default function Hero() {
                 href="https://github.com/Abdelrahman-Tarek99"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-full bg-muted/50 hover:bg-muted transition-all duration-300 group hover:scale-110"
+                className="p-4 rounded-full bg-vanta-purple-lighter/30 hover:bg-vanta-purple-lighter/50 transition-all duration-300 group hover:scale-110 border border-vanta-purple-lighter/20 hover:border-vanta-purple-lighter/40"
                 aria-label="GitHub Profile"
               >
-                <Github className="w-7 h-7 group-hover:text-primary transition-colors" />
+                <Github className="w-7 h-7 text-foreground-secondary group-hover:text-vanta-pink transition-colors" />
               </a>
               <a
                 href="https://linkedin.com/in/abdelrahman-tarek-7a5924199"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-full bg-muted/50 hover:bg-muted transition-all duration-300 group hover:scale-110"
+                className="p-4 rounded-full bg-vanta-purple-lighter/30 hover:bg-vanta-purple-lighter/50 transition-all duration-300 group hover:scale-110 border border-vanta-purple-lighter/20 hover:border-vanta-purple-lighter/40"
                 aria-label="LinkedIn Profile"
               >
-                <Linkedin className="w-7 h-7 group-hover:text-primary transition-colors" />
+                <Linkedin className="w-7 h-7 text-foreground-secondary group-hover:text-vanta-pink transition-colors" />
               </a>
               <a
                 href="mailto:abdelrahmantarekk1999@gmail.com"
-                className="p-4 rounded-full bg-muted/50 hover:bg-muted transition-all duration-300 group hover:scale-110"
+                className="p-4 rounded-full bg-vanta-purple-lighter/30 hover:bg-vanta-purple-lighter/50 transition-all duration-300 group hover:scale-110 border border-vanta-purple-lighter/20 hover:border-vanta-purple-lighter/40"
                 aria-label="Email"
               >
-                <Mail className="w-7 h-7 group-hover:text-primary transition-colors" />
+                <Mail className="w-7 h-7 text-foreground-secondary group-hover:text-vanta-pink transition-colors" />
               </a>
               <a
                 href="tel:01114443609"
-                className="p-4 rounded-full bg-muted/50 hover:bg-muted transition-all duration-300 group hover:scale-110"
+                className="p-4 rounded-full bg-vanta-purple-lighter/30 hover:bg-vanta-purple-lighter/50 transition-all duration-300 group hover:scale-110 border border-vanta-purple-lighter/20 hover:border-vanta-purple-lighter/40"
                 aria-label="Phone"
               >
-                <Phone className="w-7 h-7 group-hover:text-primary transition-colors" />
+                <Phone className="w-7 h-7 text-foreground-secondary group-hover:text-vanta-pink transition-colors" />
               </a>
             </div>
           </Reveal>
@@ -159,17 +159,20 @@ export default function Hero() {
           <div className="flex justify-center lg:justify-end">
             <div className="w-full max-w-md lg:max-w-lg">
               {animationData ? (
-                <Lottie
-                  animationData={animationData}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-auto"
-                  style={{ width: "100%", height: "auto" }}
-                />
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-vanta-pink/10 to-vanta-purple-lighter/10 rounded-2xl blur-3xl"></div>
+                  <Lottie
+                    animationData={animationData}
+                    loop={true}
+                    autoplay={true}
+                    className="w-full h-auto relative z-10"
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </div>
               ) : loadingError ? (
-                <div className="w-full h-64 bg-muted/20 rounded-lg flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <div className="w-16 h-16 bg-muted/30 rounded-full flex items-center justify-center mx-auto mb-2">
+                <div className="w-full h-64 bg-vanta-purple-lighter/20 rounded-lg flex items-center justify-center border-2 border-dashed border-vanta-purple-lighter/30">
+                  <div className="text-center text-foreground-secondary">
+                    <div className="w-16 h-16 bg-vanta-pink/20 rounded-full flex items-center justify-center mx-auto mb-2">
                       <span className="text-2xl">🎨</span>
                     </div>
                     <p>Animation could not be loaded</p>
@@ -179,9 +182,9 @@ export default function Hero() {
                   </div>
                 </div>
               ) : (
-                <div className="w-full h-64 bg-muted/20 rounded-lg flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-2"></div>
+                <div className="w-full h-64 bg-vanta-purple-lighter/20 rounded-lg flex items-center justify-center border-2 border-dashed border-vanta-purple-lighter/30">
+                  <div className="text-center text-foreground-secondary">
+                    <div className="animate-spin w-8 h-8 border-2 border-vanta-pink border-t-transparent rounded-full mx-auto mb-2"></div>
                     <p>Loading animation...</p>
                   </div>
                 </div>

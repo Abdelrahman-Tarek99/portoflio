@@ -144,10 +144,13 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur"
+      className="sticky top-0 z-40 border-b border-vanta-purple-lighter/30 bg-vanta-purple-light/80 backdrop-blur"
     >
       <nav className="container mx-auto flex items-center justify-between px-4 py-3">
-        <Link href={`/${locale}`} className="font-bold text-lg">
+        <Link
+          href={`/${locale}`}
+          className="font-bold text-lg text-foreground hover:text-vanta-pink transition-colors"
+        >
           {t("hero.title")}
         </Link>
 
@@ -161,8 +164,8 @@ export default function Navbar() {
             onClick={(e) => handleAnchorClick(e, "hero")}
             className={`relative px-3 py-2 transition-colors ${
               activeSection === "hero"
-                ? "text-primary font-medium"
-                : "text-muted-foreground hover:text-foreground"
+                ? "text-vanta-pink font-medium"
+                : "text-foreground-secondary hover:text-vanta-pink"
             }`}
           >
             {t("nav.hero")}
@@ -174,8 +177,8 @@ export default function Navbar() {
             onClick={(e) => handleAnchorClick(e, "about")}
             className={`relative px-3 py-2 transition-colors ${
               activeSection === "about"
-                ? "text-primary font-medium"
-                : "text-muted-foreground hover:text-foreground"
+                ? "text-vanta-pink font-medium"
+                : "text-foreground-secondary hover:text-vanta-pink"
             }`}
           >
             {t("nav.about")}
@@ -187,8 +190,8 @@ export default function Navbar() {
             onClick={(e) => handleAnchorClick(e, "projects")}
             className={`relative px-3 py-2 transition-colors ${
               activeSection === "projects"
-                ? "text-primary font-medium"
-                : "text-muted-foreground hover:text-foreground"
+                ? "text-vanta-pink font-medium"
+                : "text-foreground-secondary hover:text-vanta-pink"
             }`}
           >
             {t("nav.projects")}
@@ -200,8 +203,8 @@ export default function Navbar() {
             onClick={(e) => handleAnchorClick(e, "contact")}
             className={`relative px-3 py-2 transition-colors ${
               activeSection === "contact"
-                ? "text-primary font-medium"
-                : "text-muted-foreground hover:text-foreground"
+                ? "text-vanta-pink font-medium"
+                : "text-foreground-secondary hover:text-vanta-pink"
             }`}
           >
             {t("nav.contact")}
@@ -209,7 +212,7 @@ export default function Navbar() {
 
           {/* Animated underline */}
           <div
-            className="absolute bottom-0 h-0.5 bg-primary transition-all duration-300 ease-out"
+            className="absolute bottom-0 h-0.5 bg-gradient-to-r from-vanta-pink to-vanta-pink-light transition-all duration-300 ease-out"
             style={{
               left: `${underlineStyle.left}px`,
               width: `${underlineStyle.width}px`,
