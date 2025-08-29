@@ -3,6 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Download, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
+import { HERO_CONSTANTS } from "./constants/hero.constants";
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState("");
@@ -10,12 +11,6 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [animationData, setAnimationData] = useState(null);
   const [loadingError, setLoadingError] = useState(false);
-
-  const texts = [
-    "Computer Eng. Graduate",
-    "Tech Enthusiast",
-    "I build fast, accessible web apps.",
-  ];
 
   useEffect(() => {
     // Load the Lottie animation data from the extracted JSON file
@@ -46,32 +41,34 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    const currentText = texts[currentIndex];
+    const currentText = HERO_CONSTANTS.TYPING_TEXTS[currentIndex];
 
     if (!isDeleting) {
       if (displayText.length < currentText.length) {
         const timeout = setTimeout(() => {
           setDisplayText(currentText.slice(0, displayText.length + 1));
-        }, 100);
+        }, HERO_CONSTANTS.ANIMATION_TIMING.TYPE_DELAY);
         return () => clearTimeout(timeout);
       } else {
         const timeout = setTimeout(() => {
           setIsDeleting(true);
-        }, 2000);
+        }, HERO_CONSTANTS.ANIMATION_TIMING.PAUSE_DELAY);
         return () => clearTimeout(timeout);
       }
     } else {
       if (displayText.length > 0) {
         const timeout = setTimeout(() => {
           setDisplayText(displayText.slice(0, -1));
-        }, 50);
+        }, HERO_CONSTANTS.ANIMATION_TIMING.DELETE_DELAY);
         return () => clearTimeout(timeout);
       } else {
         setIsDeleting(false);
-        setCurrentIndex((prev) => (prev + 1) % texts.length);
+        setCurrentIndex(
+          (prev) => (prev + 1) % HERO_CONSTANTS.TYPING_TEXTS.length
+        );
       }
     }
-  }, [displayText, currentIndex, isDeleting, texts]);
+  }, [displayText, currentIndex, isDeleting]);
 
   return (
     <section

@@ -8,13 +8,11 @@ export function cn(...inputs: ClassValue[]) {
 export function buildWhatsAppLink({
   phone,
   name,
-  locale,
   context,
   messages,
 }: {
   phone: string;
   name?: string;
-  locale: "en" | "ar";
   context?: string;
   messages: Record<string, string>;
 }) {

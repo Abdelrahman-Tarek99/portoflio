@@ -7,10 +7,10 @@ import Navbar from "@/components/ui/Navbar";
 import "./scroll.css"; // For scroll-margin-top
 
 export async function generateMetadata(props: {
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await props.params;
-  const messages = await getMessages(locale);
+  const messages = await getMessages(locale as AppLocale);
   return {
     title: messages.meta.title as string,
     description: messages.meta.description as string,
@@ -22,10 +22,10 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: AppLocale }>;
+  params: Promise<{ locale: string }>;
 }) {
   const { locale: raw } = await params;
-  const locale = raw || DEFAULT_LOCALE;
+  const locale = (raw as AppLocale) || DEFAULT_LOCALE;
   const dir = locale === "ar" ? "rtl" : "ltr";
   const messages = await getMessages(locale);
 

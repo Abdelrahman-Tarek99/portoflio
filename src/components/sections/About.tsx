@@ -1,7 +1,6 @@
 "use client";
 import Marquee from "react-fast-marquee";
 import {
-  Code2,
   FileCode,
   Palette,
   FileText,
@@ -22,13 +21,11 @@ export default function About({
   title,
   bio,
   skillsLabel,
-  skills,
   highlights,
 }: {
   title: string;
   bio: string;
   skillsLabel: string;
-  skills: string[];
   highlights?: string[];
 }) {
   // Define the technologies with their icons

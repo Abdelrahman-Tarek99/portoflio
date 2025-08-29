@@ -5,6 +5,10 @@ import React, { ReactNode } from "react";
 import ContactForm from "./ContactForm";
 import { Button } from "../ui/button";
 import { MessageCircle, ExternalLink } from "lucide-react";
+import {
+  CONTACT_CONSTANTS,
+  toWhatsAppLink,
+} from "./constants/contact.constants";
 
 type Props = {
   title?: string;
@@ -15,71 +19,75 @@ type Props = {
   children?: ReactNode;
 };
 
-function toWhatsAppLink(raw: string) {
-  // wa.me expects digits-only (E.164 without +)
-  const digits = (raw ?? "").replace(/\D/g, "");
-  return `https://wa.me/${digits}`;
-}
-
 export default function ContactSection({
-  title = "Contact",
-  upworkUrl = "https://www.upwork.com/freelancers/~01ca703b4b73db27c1?mp_source=share",
-  whatsappRaw = "+021114443609",
-  className = "",
+  title = CONTACT_CONSTANTS.DEFAULTS.TITLE,
+  upworkUrl = CONTACT_CONSTANTS.DEFAULTS.UPWORK_URL,
+  whatsappRaw = CONTACT_CONSTANTS.DEFAULTS.WHATSAPP_RAW,
+  className = CONTACT_CONSTANTS.DEFAULTS.CLASS_NAME,
   children,
 }: Props) {
   const waLink = toWhatsAppLink(whatsappRaw);
 
   return (
     <section
-      id="contact"
-      className={`container mx-auto px-4 lg:px-6 pb-24 ${className}`}
+      id={CONTACT_CONSTANTS.SECTION_CONFIG.ID}
+      className={`${CONTACT_CONSTANTS.SECTION_CONFIG.CLASSES} ${className}`}
     >
-      <h2 className="mb-6 text-2xl font-semibold">{title}</h2>
+      <h2 className={CONTACT_CONSTANTS.TITLE_CONFIG.CLASSES}>{title}</h2>
 
-      <div className="grid gap-8 lg:grid-cols-2">
+      <div className={CONTACT_CONSTANTS.SECTION_CONFIG.GRID_CLASSES}>
         {/* LEFT: your form (default: ContactForm) */}
-        <div className="space-y-4">{children ?? <ContactForm />}</div>
+        <div className={CONTACT_CONSTANTS.CONTENT_AREAS.LEFT_CLASSES}>
+          {children ?? <ContactForm />}
+        </div>
 
         {/* RIGHT: CTAs */}
-        <aside className="space-y-4">
-          <div className="rounded-xl border bg-card p-6">
-            <h3 className="text-lg font-semibold">Prefer a quick chat?</h3>
-            <p className="mt-1 text-sm text-muted-foreground">
-              You can message me on WhatsApp or hire me on Upwork.
+        <aside className={CONTACT_CONSTANTS.CONTENT_AREAS.RIGHT_CLASSES}>
+          <div className={CONTACT_CONSTANTS.CTA_CARD_CONFIG.CLASSES}>
+            <h3 className="text-lg font-semibold">
+              {CONTACT_CONSTANTS.CTA_CARD_CONFIG.TITLE}
+            </h3>
+            <p className={CONTACT_CONSTANTS.TEXT_STYLING.DESCRIPTION}>
+              {CONTACT_CONSTANTS.CTA_CARD_CONFIG.DESCRIPTION}
             </p>
 
-            <div className="mt-5 flex flex-col sm:flex-row gap-3">
+            <div className={CONTACT_CONSTANTS.TEXT_STYLING.BUTTON_CONTAINER}>
               <Button
                 asChild
-                className="h-11 px-4 bg-[#25D366] text-black hover:bg-[#1ebe57]"
+                className={CONTACT_CONSTANTS.BUTTON_CONFIG.WHATSAPP.CLASSES}
               >
                 <a
                   href={waLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Message me on WhatsApp"
+                  target={CONTACT_CONSTANTS.LINK_CONFIG.TARGET}
+                  rel={CONTACT_CONSTANTS.LINK_CONFIG.REL}
+                  aria-label={
+                    CONTACT_CONSTANTS.BUTTON_CONFIG.WHATSAPP.ARIA_LABEL
+                  }
                 >
                   <MessageCircle className="mr-2 h-4 w-4" />
-                  Message on WhatsApp
+                  {CONTACT_CONSTANTS.BUTTON_CONFIG.WHATSAPP.LABEL}
                 </a>
               </Button>
 
-              <Button asChild variant="outline" className="h-11 px-4">
+              <Button
+                asChild
+                variant="outline"
+                className={CONTACT_CONSTANTS.BUTTON_CONFIG.UPWORK.CLASSES}
+              >
                 <a
                   href={upworkUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View my Upwork profile"
+                  target={CONTACT_CONSTANTS.LINK_CONFIG.TARGET}
+                  rel={CONTACT_CONSTANTS.LINK_CONFIG.REL}
+                  aria-label={CONTACT_CONSTANTS.BUTTON_CONFIG.UPWORK.ARIA_LABEL}
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
-                  Upwork Profile
+                  {CONTACT_CONSTANTS.BUTTON_CONFIG.UPWORK.LABEL}
                 </a>
               </Button>
             </div>
 
-            <p className="mt-3 text-xs text-muted-foreground">
-              I usually reply within a few hours (EET).
+            <p className={CONTACT_CONSTANTS.TEXT_STYLING.FOOTER}>
+              {CONTACT_CONSTANTS.CTA_CARD_CONFIG.FOOTER_TEXT}
             </p>
           </div>
         </aside>

@@ -1,7 +1,7 @@
 "use server";
 import { contactSchema } from "./schema";
 
-export async function submitContact(prevState: any, formData: FormData) {
+export async function submitContact(formData: FormData) {
   const data = {
     name: String(formData.get("name") || ""),
     email: String(formData.get("email") || ""),
