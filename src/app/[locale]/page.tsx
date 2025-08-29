@@ -17,12 +17,7 @@ export default async function HomePage({
 
   return (
     <main className="container mx-auto px-4 space-y-16">
-      <Hero
-        title={t("hero.title")}
-        subtitle={t("hero.subtitle")}
-        ctaProjects={t("hero.cta.projects")}
-        ctaContact={t("hero.cta.contact")}
-      />
+      <Hero />
       <hr />
       <About
         title={t("about.title")}
