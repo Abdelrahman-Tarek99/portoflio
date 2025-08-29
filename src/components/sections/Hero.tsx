@@ -107,7 +107,7 @@ export default function Hero() {
               <a
                 href="/AbdelrahmanYounees_cv.pdf"
                 download
-                className="inline-flex items-center gap-3 ltr:mr-4 rtl:ml-4 rounded-xl bg-gradient-to-r from-vanta-pink to-vanta-pink-light px-8 py-4 text-white font-semibold hover:from-vanta-pink-light hover:to-vanta-pink transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border-2 border-transparent hover:border-vanta-purple-lighter/50"
+                className="inline-flex items-center gap-3 ltr:mr-4 rtl:ml-4 rounded-xl bg-gradient-to-r from-vanta-pink to-vanta-pink-light px-8 py-4 text-white font-semibold hover:from-vanta-pink-light hover:to-vanta-pink transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border-2 border-white hover:border-vanta-purple-lighter/50"
               >
                 <Download className="w-6 h-6" />
                 Download CV
